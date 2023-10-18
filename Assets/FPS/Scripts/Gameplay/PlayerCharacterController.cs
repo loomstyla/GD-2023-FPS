@@ -371,7 +371,9 @@ namespace Unity.FPS.Gameplay
             // apply the final calculated velocity value as a character movement
             Vector3 capsuleBottomBeforeMove = GetCapsuleBottomHemisphere();
             Vector3 capsuleTopBeforeMove = GetCapsuleTopHemisphere(m_Controller.height);
-            m_Controller.Move(CharacterVelocity * Time.deltaTime);
+
+            //Se movia muy lento, comenté el deltatime
+            m_Controller.Move(CharacterVelocity);// * Time.deltaTime);
 
             // detect obstructions to adjust velocity accordingly
             m_LatestImpactSpeed = Vector3.zero;
